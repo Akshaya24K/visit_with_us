@@ -14,14 +14,6 @@ This application predicts the likelihood of a Tourism Product Taken based on its
 Please enter the specifiction data below to get a prediction.
 """)
 
-# User input
-Type = st.selectbox("Machine Type", ["H", "L", "M"])
-air_temp = st.number_input("Air Temperature (K)", min_value=250.0, max_value=400.0, value=298.0, step=0.1)
-process_temp = st.number_input("Process Temperature (K)", min_value=250.0, max_value=500.0, value=324.0, step=0.1)
-rot_speed = st.number_input("Rotational Speed (RPM)", min_value=0, max_value=3000, value=1400)
-torque = st.number_input("Torque (Nm)", min_value=0.0, max_value=100.0, value=40.0, step=0.1)
-tool_wear = st.number_input("Tool Wear (min)", min_value=0, max_value=300, value=10)
-#
 # User Input
 age = st.number_input("Age", min_value=18, max_value=61, value=37)
 type_of_contact = st.selectbox("Type of Contact", ["Self Enquiry", "Company Invited"])
