@@ -32,9 +32,14 @@ ytrain = pd.read_csv(ytrain_path)
 ytest = pd.read_csv(ytest_path)
 
 # 1. Clean BEFORE anything else
-df['Gender'] = df['Gender'].replace('Fe Male', 'Female') # Data Quality issue
-df['Occupation'] = df['Occupation'].replace('Free Lancer', 'Small Business') # Sparse category
-df['MaritalStatus'] = df['MaritalStatus'].replace('Unmarried', 'Single') # Overlapping categories 
+# 1. Clean BEFORE anything else
+Xtrain['Gender'] = Xtrain['Gender'].replace('Fe Male', 'Female') # Data Quality issue
+Xtrain['Occupation'] = Xtrain['Occupation'].replace('Free Lancer', 'Small Business') # Sparse category
+Xtrain['MaritalStatus'] = Xtrain['MaritalStatus'].replace('Unmarried', 'Single') # Overlapping categories 
+
+Xtest['Gender'] = Xtest['Gender'].replace('Fe Male', 'Female') # Data Quality issue
+Xtest['Occupation'] = Xtest['Occupation'].replace('Free Lancer', 'Small Business') # Sparse category
+Xtest['MaritalStatus'] = Xtest['MaritalStatus'].replace('Unmarried', 'Single') # Overlapping categories 
 
 # 2. Define feature lists — keep it simple for XGBoost
 numeric_features = ['Age', 'CityTier', 'DurationOfPitch', 'NumberOfPersonVisiting',
